@@ -2843,9 +2843,8 @@ Services Section */
   }
 
   .section-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #17283b; /* Dark blue for title */
-   
     margin-bottom: 10px;
   }
 
