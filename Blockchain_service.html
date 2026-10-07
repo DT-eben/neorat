@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Services - neorat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="style/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #17283b;
+      --secondary-color: #007bff;
+      --accent-color: #f6fcfe;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: var(--text-dark);
+    }
+
+    big{
+    display: block;
+    }
+    a{
+    text-decoration: none;
+    color: black;
+    }
+
+
+    .blockchain-hero {
+      background: linear-gradient(135deg, rgba(23, 40, 59, 0.95), rgba(0, 123, 255, 0.85)),
+                  url('blockchain-bg.jpg') center/cover;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-box {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--text-light);
+      border-radius: 15px;
+      padding: 2rem;
+      height: 100%;
+    }
+
+    .tech-pill {
+      background: rgba(0,123,255,0.1);
+      color: var(--secondary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      display: inline-block;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .tech-pill:hover {
+      background: var(--secondary-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .process-step {
+      position: relative;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .process-step::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 30px;
+      background: var(--secondary-color);
+      display: none;
+    }
+
+    .use-case-card {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .use-case-card:hover {
+      background: white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--text-light);
+      padding: 5rem 0;
+    }
+
+    .blockchain-benefits {
+      background: #f8f9fa;
+      padding: 5rem 0;
+    }
+
+    .benefit-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    /* Call to Action Section */
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      color: rgba(246, 252, 254, 0.8);
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .process-step::after {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">neorat</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+    <a href="" class="dropdown-toggle">Services</a>
+    <ul class="dropdown-menu">
+      <li><a href="IT_services.html">Freelance IT services</a></li>
+      <li><a href="Blockchain_service.html" class="active">Blockchain solutions</a></li>
+
+      <li><a href="web3_service.html">Web3 Grant management</a></li>
+
+
+    </ul>
+  </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="blockchain-hero ">
+    <div class="hero-particles" id="particles-js"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <big class="display-4 mb-4" data-aos="fade-up">Blockchain Solutions</big>
+          <span class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+            Revolutionize your business with secure, transparent, and efficient blockchain technology
+          </span><br><br>
+          <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-light btn-lg" data-aos="fade-up" data-aos-delay="200"> <a href="#cta">Get Started</a></button>
+            <button class="btn btn-outline-light btn-lg" data-aos="fade-up" data-aos-delay="300"><a href="#start" style="color:white;">Learn more</a</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Core Services -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5">Our Blockchain Services</h2>
+        <p class="lead text-muted">Comprehensive blockchain solutions for modern businesses</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="service-card">
+            <i class="bi bi-building text-primary fs-1 mb-3"></i>
+            <h4>Enterprise Blockchain Development</h4>
+            <p>Custom blockchain solutions tailored to your business needs. We build private and consortium blockchains that enhance security and efficiency.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Private Blockchain Networks</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Consortium Blockchain Development</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Business Process Automation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <i class="bi bi-currency-bitcoin text-primary fs-1 mb-3"></i>
+            <h4>Smart Contract Development</h4>
+            <p>Secure and efficient smart contracts that automate and enforce business agreements without intermediaries.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Custom Smart Contracts</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Contract Auditing</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Automated Testing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <i class="bi bi-box-seam text-primary fs-1 mb-3"></i>
+            <h4>DApp Development</h4>
+            <p>End-to-end decentralized application development for various use cases and industries.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Web3 Integration</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>DeFi Applications</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>NFT Platforms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Technologies We Use</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <div class="tech-stack">
+            <span class="tech-pill">Ethereum</span>
+            <span class="tech-pill">Hyperledger Fabric</span>
+            <span class="tech-pill">Solidity</span>
+            <span class="tech-pill">Web3.js</span>
+            <span class="tech-pill">Truffle</span>
+            <span class="tech-pill">IPFS</span>
+            <span class="tech-pill">Smart Contracts</span>
+            <span class="tech-pill">Polygon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Industry Use Cases</h2>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="use-case-card">
+            <h4>Supply Chain Management</h4>
+            <p>Track products from origin to destination with complete transparency and traceability.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="use-case-card">
+            <h4>Financial Services</h4>
+            <p>Streamline transactions and reduce costs with automated financial processes.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="use-case-card">
+            <h4>Healthcare</h4>
+            <p>Secure patient data sharing and medical record management.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="use-case-card">
+            <h4>Real Estate</h4>
+            <p>Tokenization of real estate assets and automated property transactions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Process -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Development Process</h2>
+      <div class="row">
+        <div class="col-md-3" data-aos="fade-up">
+          <div class="process-step">
+            <h5>1. Consultation</h5>
+            <p>Understanding your business needs and identifying blockchain opportunities</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="process-step">
+            <h5>2. Solution Design</h5>
+            <p>Architecting the perfect blockchain solution for your use case</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="process-step">
+            <h5>3. Development</h5>
+            <p>Building and testing your blockchain solution</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="process-step">
+            <h5>4. Deployment</h5>
+            <p>Launching and maintaining your blockchain platform</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="blockchain-benefits">
+    <div class="container">
+      <h2 class="text-center mb-5">Why Choose Blockchain?</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="text-center">
+            <i class="bi bi-shield-check benefit-icon"></i>
+            <h4>Enhanced Security</h4>
+            <p>Immutable records and cryptographic security ensure data integrity</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-center">
+            <i class="bi bi-graph-up benefit-icon"></i>
+            <h4>Increased Efficiency</h4>
+            <p>Automated processes and reduced intermediaries save time and costs</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-center">
+            <i class="bi bi-eye benefit-icon"></i>
+            <h4>Full Transparency</h4>
+            <p>Complete visibility and traceability of all transactions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta section dark-background">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mb-4">Ready to Transform Your Business?</h2>
+          <p class="lead mb-4">Let's discuss how blockchain technology can revolutionize your operations</p>
+<a href="contact.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Schedule a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer-clean">
+    <footer>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Blockchain Consulting</a></li>
+              <li><a href="#">Smart Contracts</a></li>
+              <li><a href="#">DApp Development</a></li>
+              <li><a href="#">Cybersecurity</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="about.html">Company</a></li>
+              <li><a href="about.html">Mission</a></li>
+              <li><a href="about.html">Team</a></li>
+              <li><a href="about.html">Legacy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="#">Job Openings</a></li>
+              <li><a href="#">Employee Success</a></li>
+              <li><a href="#">Benefits</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 item social">
+            <a href="#"><i class="icon ion-social-facebook"></i></a>
+            <a href="#"><i class="icon ion-social-twitter"></i></a>
+            <a href="#"><i class="icon ion-social-snapchat"></i></a>
+            <a href="#"><i class="icon ion-social-instagram"></i></a>
+          </div>
+        </div>
+        <br>
+        <br>
+        <center><p class="copyright">neorat © 2025</p></center>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    window.addEventListener("scroll", function() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+    function mobileNavToogle() {
+      document.querySelector('body').classList.toggle('mobile-nav-active');
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navmenu a').forEach(navmenu => {
+      navmenu.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+      navmenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle('active');
+        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+        e.stopImmediatePropagation();
+      });
+    });
+  </script>
+</body>
+</html>

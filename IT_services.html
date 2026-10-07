@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Services - neorat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="style/style.css" rel="stylesheet">
+  <style>
+
+big{
+display: block;
+}
+a{
+text-decoration: none;
+color: black;
+}
+  .blockchain-hero {
+    background: linear-gradient(135deg, rgba(23, 40, 59, 0.95), rgba(0, 123, 255, 0.85)),
+                url('blockchain-bg.jpg') center/cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+    .process-timeline {
+      position: relative;
+      padding: 60px 0;
+    }
+
+    .process-step {
+      padding: 30px;
+      border-radius: 10px;
+      background: #f8f9fa;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      width: 30px;
+      height: 2px;
+      background: #007bff;
+      display: none;
+    }
+
+    .testimonial-card {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px 0;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .tech-item {
+      padding: 15px 30px;
+      background: #f8f9fa;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .tech-item:hover {
+      background: #007bff;
+      color: #fff;
+    }
+
+    .stats-section {
+      background: #17283b;
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+    /* Call to Action Section */
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      color: rgba(246, 252, 254, 0.8);
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .process-step::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">neorat</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+    <a href="" class="dropdown-toggle">Services</a>
+    <ul class="dropdown-menu">
+      <li><a href="IT_services.html" class="active">Freelance IT services</a></li>
+      <li><a href="Blockchain_service.html">Blockchain solutions</a></li>
+
+      <li><a href="web3_service.html">Web3 Grant management</a></li>
+
+
+    </ul>
+  </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="blockchain-hero ">
+    <div class="hero-particles" id="particles-js"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <big class="display-4 mb-4" data-aos="fade-up">Blockchain Solutions</big>
+          <span class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+            Revolutionize your business with secure, transparent, and efficient blockchain technology
+          </span><br><br>
+          <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-light btn-lg" data-aos="fade-up" data-aos-delay="200"> <a href="#cta">Get Started</a></button>
+            <button class="btn btn-outline-light btn-lg" data-aos="fade-up" data-aos-delay="300"><a href="#start" style="color:white;">Learn more</a</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Core Services -->
+  <section class="py-5" id="start">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Our Core IT Services</h2>
+        <p class="lead text-muted">Comprehensive solutions for your business needs</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="service-card p-4">
+            <i class="bi bi-cloud service-icon"></i>
+            <h4>Cloud Infrastructure</h4>
+            <p>Scalable cloud solutions including migration, optimization, and management</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card p-4">
+            <i class="bi bi-shield-check service-icon"></i>
+            <h4>Cybersecurity</h4>
+            <p>Advanced security solutions to protect your business from modern threats</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card p-4">
+            <i class="bi bi-gear service-icon"></i>
+            <h4>IT Infrastructure</h4>
+            <p>End-to-end infrastructure management and optimization services</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="stat-item">
+            <div class="stat-number" data-aos="fade-up">25+</div>
+            <div class="stat-label">Successful Implementations</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-item">
+            <div class="stat-number" data-aos="fade-up" data-aos-delay="100">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-item">
+            <div class="stat-number" data-aos="fade-up" data-aos-delay="200">24/7</div>
+            <div class="stat-label">Support Available</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-item">
+            <div class="stat-number" data-aos="fade-up" data-aos-delay="300">15+</div>
+            <div class="stat-label">Certified Experts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="process-timeline py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Process</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="process-step" data-aos="fade-right">
+            <h5>1. Assessment</h5>
+            <p>Thorough analysis of your current IT infrastructure and needs</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+            <h5>2. Planning</h5>
+            <p>Developing a customized strategy and solution architecture</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+            <h5>3. Implementation</h5>
+            <p>Executing the plan with minimal disruption to your business</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+            <h5>4. Support</h5>
+            <p>Ongoing maintenance and optimization of your IT systems</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Technologies We Work With</h2>
+      <div class="tech-stack">
+        <span class="tech-item">AWS</span>
+        <span class="tech-item">Microsoft Azure</span>
+        <span class="tech-item">Google Cloud</span>
+        <span class="tech-item">VMware</span>
+        <span class="tech-item">Cisco</span>
+        <span class="tech-item">Dell EMC</span>
+        <span class="tech-item">ServiceNow</span>
+        <span class="tech-item">Kubernetes</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="cta" class="cta section dark-background">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 data-aos="fade-up">Ready to Transform Your IT Infrastructure?</h2>
+          <p data-aos="fade-up" data-aos-delay="100" class="mb-4">
+            Let's discuss how we can help your business thrive with our IT solutions
+          </p>
+          <a href="contact.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Schedule a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <div class="footer-clean">
+       <footer>
+           <div class="container">
+               <div class="row justify-content-center">
+                   <div class="col-sm-4 col-md-3 item">
+                       <h3>Services</h3>
+                       <ul>
+                           <li><a href="#">Technology</a></li>
+                           <li><a href="#">Blockchain</a></li>
+                           <li><a href="#">Web design</a></li>
+                           <li><a href="#">Development</a></li>
+
+                       </ul>
+                   </div>
+                   <div class="col-sm-4 col-md-3 item">
+                       <h3>About</h3>
+                       <ul>
+                           <li><a href="about.html">Company</a></li>
+                            <li><a href="about.html">Mission</a></li>
+                           <li><a href="about.html">Team</a></li>
+                           <li><a href="about.html">Legacy</a></li>
+                       </ul>
+                   </div>
+                   <div class="col-sm-4 col-md-3 item">
+                       <h3>Careers</h3>
+                       <ul>
+                           <li><a href="#">Job openings</a></li>
+                           <li><a href="#">Employee success</a></li>
+                           <li><a href="#">Benefits</a></li>
+                       </ul>
+                   </div>
+                   <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+
+                   </div>
+               </div>
+<br>
+<br>
+     <center><p class="copyright">neorat © 2025</p></center>
+           </div>
+       </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    window.addEventListener("scroll", function() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+    function mobileNavToogle() {
+      document.querySelector('body').classList.toggle('mobile-nav-active');
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navmenu a').forEach(navmenu => {
+      navmenu.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+      navmenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle('active');
+        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+        e.stopImmediatePropagation();
+      });
+    });
+  </script>
+</body>
+</html>

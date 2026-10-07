@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web3 Grants - neorat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="style/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #17283b;
+      --secondary-color: #007bff;
+      --accent-color: #f6fcfe;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+    }
+
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: var(--text-dark);
+    }
+
+    big{
+    display: block;
+    }
+    a{
+    text-decoration: none;
+    color: black;
+    }
+
+    .blockchain-hero {
+      background: linear-gradient(135deg, rgba(23, 40, 59, 0.95), rgba(0, 123, 255, 0.85)),
+                  url('blockchain-bg.jpg') center/cover;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+
+    .funding-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .funding-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .grant-stats {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--text-light);
+      padding: 4rem 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .category-pill {
+      background: rgba(130,71,229,0.1);
+      color: var(--secondary-color);
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      display: inline-block;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .category-pill:hover {
+      background: var(--secondary-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .process-box {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      height: 100%;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .process-box::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      width: 30px;
+      height: 2px;
+      background: var(--secondary-color);
+      display: none;
+    }
+
+    .success-story {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .success-story:hover {
+      background: white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .eligibility-section {
+      background: #f8f9fa;
+      padding: 5rem 0;
+    }
+
+    .criteria-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    /* Call to Action Section */
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      color: rgba(246, 252, 254, 0.8);
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .process-box::after {
+        display: block;
+      }
+
+      .process-box:last-child::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">neorat</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+    <a href="" class="dropdown-toggle">Services</a>
+    <ul class="dropdown-menu">
+      <li><a href="IT_services.html">Freelance IT services</a></li>
+      <li><a href="Blockchain_service.html">Blockchain solutions</a></li>
+
+      <li><a href="web3_service.html" class="active">Web3 Grant management</a></li>
+
+
+    </ul>
+  </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="blockchain-hero ">
+    <div class="hero-particles" id="particles-js"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <big class="display-4 mb-4" data-aos="fade-up">Blockchain Solutions</big>
+          <span class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+            Revolutionize your business with secure, transparent, and efficient blockchain technology
+          </span><br><br>
+          <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-light btn-lg" data-aos="fade-up" data-aos-delay="200"> <a href="#cta">Get Started</a></button>
+            <button class="btn btn-outline-light btn-lg" data-aos="fade-up" data-aos-delay="300"><a href="#start" style="color:white;">Learn more</a</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Grant Statistics -->
+  <section class="grant-stats">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-3" data-aos="fade-up">
+          <div class="stat-card">
+            <div class="stat-number">$10M+</div>
+            <p>Total Grants Awarded</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-card">
+            <div class="stat-number">200+</div>
+            <p>Projects Funded</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-card">
+            <div class="stat-number">45</div>
+            <p>Countries Reached</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-card">
+            <div class="stat-number">92%</div>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funding Categories -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5">Grant Categories</h2>
+        <p class="lead text-muted">Supporting innovation across the Web3 ecosystem</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="funding-card">
+            <i class="bi bi-boxes text-primary fs-1 mb-3"></i>
+            <h4>DeFi Innovation</h4>
+            <p>Grants for decentralized finance projects that push the boundaries of financial innovation.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Up to $100,000</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Technical Mentorship</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Network Integration</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="funding-card">
+            <i class="bi bi-grid-3x3-gap text-primary fs-1 mb-3"></i>
+            <h4>Infrastructure & Tools</h4>
+            <p>Supporting projects that strengthen the Web3 infrastructure and developer tooling.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Up to $250,000</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Technical Support</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Community Access</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="funding-card">
+            <i class="bi bi-people text-primary fs-1 mb-3"></i>
+            <h4>Social Impact</h4>
+            <p>Empowering projects that leverage Web3 for positive social change and inclusion.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Up to $150,000</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Impact Assessment</li>
+              <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Partnership Access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus Areas -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Priority Focus Areas</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <div class="tech-stack">
+            <span class="category-pill">Zero Knowledge</span>
+            <span class="category-pill">Layer 2 Solutions</span>
+            <span class="category-pill">Cross-chain</span>
+            <span class="category-pill">Privacy</span>
+            <span class="category-pill">Governance</span>
+            <span class="category-pill">Sustainability</span>
+            <span class="category-pill">Gaming</span>
+            <span class="category-pill">NFT Utility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Process -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Grant Application Process</h2>
+      <div class="row">
+        <div class="col-md-3" data-aos="fade-up">
+          <div class="process-box">
+            <h5>1. Submit Proposal</h5>
+            <p>Share your project vision, team, and technical implementation plan</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="process-box">
+            <h5>2. Initial Review</h5>
+            <p>Technical and strategic assessment by our expert committee</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="process-box">
+            <h5>3. Due Diligence</h5>
+            <p>Detailed evaluation and team interview process</p>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="process-box">
+            <h5>4. Grant Award</h5>
+            <p>Funding disbursement and project kickoff</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Success Stories</h2>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="success-story">
+            <h4>DeFi Protocol Revolution</h4>
+            <p>"The grant enabled us to build and launch our innovative DeFi protocol, now serving over 50,000 users globally."</p>
+            <small class="text-muted">- DeFi Team, Grant Recipient 2024</small>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="success-story">
+            <h4>Sustainable Blockchain Initiative</h4>
+            <p>"Support from the grant program was crucial in developing our zero-carbon blockchain solution."</p>
+            <small class="text-muted">- Green Blockchain Labs, Grant Recipient 2024</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <section id="cta" class="cta section dark-background">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="mb-4">Ready to Build the Future of Web3?</h2>
+            <p class="lead mb-4">Join our community of innovators and bring your ideas to life</p>
+  <a href="contact.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Start Your Application</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <div class="footer-clean">
+       <footer>
+           <div class="container">
+               <div class="row justify-content-center">
+                   <div class="col-sm-4 col-md-3 item">
+                       <h3>Services</h3>
+                       <ul>
+                           <li><a href="#">Technology</a></li>
+                           <li><a href="#">Blockchain</a></li>
+                           <li><a href="#">Web design</a></li>
+                           <li><a href="#">Development</a></li>
+
+                       </ul>
+                   </div>
+                   <div class="col-sm-4 col-md-3 item">
+                       <h3>About</h3>
+                       <ul>
+                           <li><a href="about.html">Company</a></li>
+                            <li><a href="about.html">Mission</a></li>
+                           <li><a href="about.html">Team</a></li>
+                           <li><a href="about.html">Legacy</a></li>
+                       </ul>
+                   </div>
+                   <div class="col-sm-4 col-md-3 item">
+                       <h3>Careers</h3>
+                       <ul>
+                           <li><a href="#">Job openings</a></li>
+                           <li><a href="#">Employee success</a></li>
+                           <li><a href="#">Benefits</a></li>
+                       </ul>
+                   </div>
+                   <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+
+                   </div>
+               </div>
+<br>
+<br>
+     <center><p class="copyright">neorat © 2025</p></center>
+           </div>
+       </footer>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="function/neorat.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    window.addEventListener("scroll", function() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+      } else {
+          header.classList.remove("scrolled");
+      }
+    });
+
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+    function mobileNavToogle() {
+      document.querySelector('body').classList.toggle('mobile-nav-active');
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navmenu a').forEach(navmenu => {
+      navmenu.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+      navmenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle('active');
+        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+        e.stopImmediatePropagation();
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #17283b;
+    }
+
+    .header {
+      background-color: rgba(255, 255, 255, 0);
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      transition: all 0.5s ease;
+    }
+
+    .header.scrolled {
+      background-color: rgba(23, 40, 59, 0.9);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .logo h1 {
+      font-size: 30px;
+      color: #fff;
+      margin: 0;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .dark-background {
+      background-color: #17283b;
+      color: #f6fcfe;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(23, 40, 59, 0.8), rgba(23, 40, 59, 0.8)), url('software-developer-6521720_1920.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #f6fcfe;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: rgba(246, 252, 254, 0.8);
+      margin-bottom: 40px;
+    }
+
+    .hero .btn-primary {
+      background: #007bff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero .btn-primary:hover {
+      background: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    /* Services Section */
+    .services .service-item {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .services .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .services .service-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #007bff;
+      color: #fff;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      transition: background 0.3s ease;
+    }
+
+    .services .service-item:hover .service-icon {
+      background: #0056b3;
+    }
+
+    .services h3 {
+      font-size: 1.5rem;
+      color: #17283b;
+      margin-bottom: 15px;
+    }
+
+    .services p {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 20px;
+    }
+
+    .services .btn-square {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #007bff;
+      color: #fff;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .services .btn-square:hover {
+      background: #0056b3;
+      transform: translateX(5px);
+    }
+
+    /* Service Details Section */
+    .service-details {
+      background: #f6fcfe;
+      padding: 60px 0;
+    }
+
+    .service-details h2 {
+      font-size: 2.5rem;
+      color: #17283b;
+      margin-bottom: 20px;
+    }
+
+    .service-details p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      margin-bottom: 20px;
+    }
+
+    .service-details ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-details ul li {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .service-details ul li i {
+      color: #007bff;
+      margin-right: 10px;
+    }
+
+    .service-details .btn-primary {
+      background: #007bff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .service-details .btn-primary:hover {
+      background: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    .footer-clean {
+      background-color: #17283b;
+      color: #f6fcfe;
+      padding: 50px 0;
+    }
+
+    .footer-clean h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-clean ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-clean ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-clean ul li a {
+      color: rgba(246, 252, 254, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-clean ul li a:hover {
+      color: #007bff;
+    }
+
+    .footer-clean .social a {
+      color: #f6fcfe;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-clean .social a:hover {
+      color: #007bff;
+    }
+
+    .footer-clean .copyright {
+      font-size: 0.9rem;
+      color: rgba(246, 252, 254, 0.8);
+      margin-top: 20px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .services h3 {
+        font-size: 1.25rem;
+      }
+
+      .services p {
+        font-size: 0.8rem;
+      }
+
+      .service-details h2 {
+        font-size: 2rem;
+      }
+
+      .service-details p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">neorat</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+  <a href="services.html" class="dropdown-toggle">Services</a>
+  <ul class="dropdown-menu">
+    <li><a href="IT_services.html">Freelance IT services</a></li>
+    <li><a href="Blockchain_service.html">Blockchain solutions</a></li>
+
+    <li><a href="web3_service.html">Web3 Grant management</a></li>
+
+
+  </ul>
+</li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+    <div class="container">
+      <div class="col-lg-8 text-center mx-auto">
+        <h1 data-aos="fade-up">Our Services</h1>
+        <p data-aos="fade-up" data-aos-delay="100" class="mb-4">
+          We deliver innovative solutions in cybersecurity, Web3, AI, and more. Explore our services below.
+        </p>
+        <a href="#services" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services section">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Service 1: Cybersecurity -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="bi bi-shield-lock"></i>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>Protect your digital assets with our advanced cybersecurity solutions.</p>
+            <a href="#cybersecurity" class="btn btn-square">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 2: Web3 Development -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="bi bi-globe"></i>
+            </div>
+            <h3>Web3 Development</h3>
+            <p>Build decentralized applications and embrace the future of the web.</p>
+            <a href="#web3" class="btn btn-square">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 3: AI & Machine Learning -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="bi bi-robot"></i>
+            </div>
+            <h3>AI & Machine Learning</h3>
+            <p>Leverage AI and ML to drive innovation and efficiency.</p>
+            <a href="#ai-ml" class="btn btn-square">
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details Section -->
+  <section id="service-details" class="service-details section">
+    <div class="container">
+      <!-- Cybersecurity Details -->
+      <div id="cybersecurity" class="service-detail-item">
+        <h2>Cybersecurity</h2>
+        <p>
+          Our cybersecurity services are designed to protect your business from evolving threats. We offer:
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i>Advanced threat detection and prevention</li>
+          <li><i class="bi bi-check-circle"></i>24/7 monitoring and incident response</li>
+          <li><i class="bi bi-check-circle"></i>Data encryption and secure access controls</li>
+          <li><i class="bi bi-check-circle"></i>Compliance with industry standards (GDPR, HIPAA, etc.)</li>
+        </ul>
+        <a href="/contact" class="btn btn-primary">Get Started</a>
+      </div>
+
+      <!-- Web3 Development Details -->
+      <div id="web3" class="service-detail-item">
+        <h2>Web3 Development</h2>
+        <p>
+          We specialize in building decentralized applications (dApps) and blockchain solutions. Our services include:
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i>Smart contract development</li>
+          <li><i class="bi bi-check-circle"></i>NFT marketplace creation</li>
+          <li><i class="bi bi-check-circle"></i>Decentralized finance (DeFi) solutions</li>
+          <li><i class="bi bi-check-circle"></i>Blockchain integration and consulting</li>
+        </ul>
+        <a href="/contact" class="btn btn-primary">Learn More</a>
+      </div>
+
+      <!-- AI & Machine Learning Details -->
+      <div id="ai-ml" class="service-detail-item">
+        <h2>AI & Machine Learning</h2>
+        <p>
+          Harness the power of AI and ML to transform your business. We offer:
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i>Predictive analytics and data modeling</li>
+          <li><i class="bi bi-check-circle"></i>Natural language processing (NLP)</li>
+          <li><i class="bi bi-check-circle"></i>Computer vision and image recognition</li>
+          <li><i class="bi bi-check-circle"></i>AI-driven automation and optimization</li>
+        </ul>
+        <a href="/contact" class="btn btn-primary">Explore AI Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer-clean">
+    <footer>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">Hosting</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Legacy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-3 item">
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="#">Job Openings</a></li>
+              <li><a href="#">Employee Success</a></li>
+              <li><a href="#">Benefits</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 item social">
+            <a href="#"><i class="icon ion-social-facebook"></i></a>
+            <a href="#"><i class="icon ion-social-twitter"></i></a>
+            <a href="#"><i class="icon ion-social-snapchat"></i></a>
+            <a href="#"><i class="icon ion-social-instagram"></i></a>
+          </div>
+        </div>
+        <br>
+        <br>
+        <center><p class="copyright">neorat © 2023</p></center>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    window.addEventListener("scroll", function() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+    function mobileNavToogle() {
+      document.querySelector('body').classList.toggle('mobile-nav-active');
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navmenu a').forEach(navmenu => {
+      navmenu.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+      navmenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle('active');
+        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+        e.stopImmediatePropagation();
+      });
+    });
+  </script>
+</body>
+</html>
